@@ -17,14 +17,14 @@ app.use(
 )
 
 app.post('/checkout', async (req, res) => {
-    const { description, posts, amount, card } = req.body
+    const { description, posts, amount } = req.body
     const session = await stripe.checkout.sessions.create({
         payment_method_types: ['card'],
         line_items: [
             {
                 name: 'Instagram likes',
                 description: description,
-                images: posts,
+                images: posts.map(e => e.link),
                 amount: amount,
                 currency: 'usd',
                 quantity: 1
@@ -35,7 +35,6 @@ app.post('/checkout', async (req, res) => {
         cancel_url: 'https://example.com/cancel'
     })
     console.log('session: ', session)
-    console.log('card data', card)
     res.json(session)
 })
 
