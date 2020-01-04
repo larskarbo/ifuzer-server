@@ -17,19 +17,19 @@ app.use(
 )
 
 app.post('/checkout', async (req, res) => {
-    const { description, posts, amount } = req.body
-    console.log('posts: ', posts)
+    const { description, posts, likes, amount } = req.body
+    console.log('description: ', description);
     const session = await stripe.checkout.sessions.create({
         payment_method_types: ['card'],
         payment_intent_data: {
             metadata: {
                 images: posts.map(p => p.shortcode).join(','),
-                likesInTotal: 'xxx'
+                likesInTotal: likes
             }
         },
         line_items: [
             {
-                name: 'xxx likes for ' + posts.length + ' images',
+                name: likes +' likes for ' + posts.length + ' images',
                 images: [
                     'https://www.ifuzer.com/wp-content/uploads/2019/11/bluelike.png'
                 ],
