@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 3015
+const port = 80
 var cors = require('cors')
 var ig = require('instagram-scraping')
 const instagram = require('user-instagram')
