@@ -5,7 +5,7 @@ var cors = require('cors')
 var ig = require('instagram-scraping')
 const instagram = require('user-instagram')
 
-const stripe = require('stripe')('sk_test_CAkJIvCt5VhT8jz9iNDGflKm003LJPoncK')
+const stripe = require('stripe')('sk_test_96Eefisc1DFX9r0nqV8Q58cD00BxYsUBLK')
 app.use(cors())
 var bodyParser = require('body-parser')
 app.use(bodyParser.json()) // to support JSON-encoded bodies
