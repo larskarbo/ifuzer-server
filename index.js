@@ -39,8 +39,8 @@ app.post('/checkout', async (req, res) => {
             }
         ],
         success_url:
-            'https://example.com/success?session_id={CHECKOUT_SESSION_ID}',
-        cancel_url: 'https://example.com/cancel'
+            'https://www.ifuzer.com/thank-you/',
+        cancel_url: 'https://www.ifuzer.com/buy-instagram-likes/'
     })
     console.log('session: ', session)
     res.json(session)
