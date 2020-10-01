@@ -29,7 +29,7 @@ app.post('/checkout', async (req, res) => {
         },
         line_items: [
             {
-                name: likes +' likes for ' + posts.length + ' images',
+                name: likes + ' likes for ' + posts.length + ' images',
                 images: [
                     'https://www.ifuzer.com/wp-content/uploads/2019/11/bluelike.png'
                 ],
