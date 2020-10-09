@@ -51,21 +51,22 @@ app.get('/ig/:user', async (req, res) => {
     //   console.dir(result);
     //   res.json(result);
     // });
-    console.log(req.params.user)
-    instagram('https://www.instagram.com/' + req.params.user)
-        .then(data => {
-            console.log(`Full name is: ${data.fullName}`)
-            res.json(data)
-        })
-        .catch(e => {
-            console.log('e: ', e);
-            // Error will trigger if the account link provided is false.
-            res.status(200).send({
-                isError: true,
-                message: 'Username not found!',
-                error: e
-            })
-            // console.log(e.message)
-        })
+    console.log("hei: ", req.params.user)
+    res.json({horse: false})
+    // instagram('https://www.instagram.com/' + req.params.user)
+    //     .then(data => {
+    //         console.log(`Full name is: ${data.fullName}`)
+    //         res.json(data)
+    //     })
+    //     .catch(e => {
+    //         console.log('e: ', e);
+    //         // Error will trigger if the account link provided is false.
+    //         res.status(200).send({
+    //             isError: true,
+    //             message: 'Username not found!',
+    //             error: e
+    //         })
+    //         // console.log(e.message)
+    //     })
 })
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
