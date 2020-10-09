@@ -38,6 +38,7 @@ app.post('/checkout', async (req, res) => {
                 quantity: 1
             }
         ],
+
         success_url: 'https://www.ifuzer.com/thank-you/',
         cancel_url: 'https://www.ifuzer.com/buy-instagram-likes/'
     })
@@ -50,7 +51,7 @@ app.get('/ig/:user', async (req, res) => {
     //   console.dir(result);
     //   res.json(result);
     // });
-
+    console.log(req.params.user)
     instagram('https://www.instagram.com/' + req.params.user)
         .then(data => {
             console.log(`Full name is: ${data.fullName}`)
