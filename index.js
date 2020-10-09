@@ -38,8 +38,7 @@ app.post('/checkout', async (req, res) => {
                 quantity: 1
             }
         ],
-        success_url:
-            'https://www.ifuzer.com/thank-you/',
+        success_url: 'https://www.ifuzer.com/thank-you/',
         cancel_url: 'https://www.ifuzer.com/buy-instagram-likes/'
     })
     console.log('session: ', session)
@@ -58,6 +57,7 @@ app.get('/ig/:user', async (req, res) => {
             res.json(data)
         })
         .catch(e => {
+            console.log('e: ', e);
             // Error will trigger if the account link provided is false.
             res.status(200).send({
                 isError: true,
