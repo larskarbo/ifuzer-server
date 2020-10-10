@@ -2,7 +2,6 @@ const express = require('express')
 const app = express()
 const port = 3015
 var cors = require('cors')
-var ig = require('instagram-scraping')
 const instagram = require('user-instagram')
 
 const stripe = require('stripe')(process.env.IFUZER_STRIPE_API)
